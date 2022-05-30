@@ -1,0 +1,9 @@
+<div class="toast-container" [class]="type" [class.hidden]="!show">
+    <img src="../../../../assets/icons/warning.svg" alt="">
+    <span>
+        <ng-content></ng-content>
+    </span>
+    <div class="divider"></div>
+    <img style="cursor: pointer;" src="../../../../assets/icons/close.svg" (click)="hiddenToast()" alt="">
+    <div #loader class="loader"></div>
+</div>

@@ -1,0 +1,87 @@
+<div class="container">
+    <al-toast (closeToast)="closeToast()" *ngIf="showToast">Usuário não encontrado</al-toast>
+    <al-header></al-header>
+    <al-menu></al-menu>
+    <al-footer>
+        <al-button *ngIf="user.name">Iniciar nova admissão</al-button>
+        <al-button type="secundario">Dicas para admissão</al-button>
+    </al-footer>
+    <div class="content">
+        <div class="stepper">
+            <al-stepper [steps]="steps"></al-stepper>
+        </div>
+        <div>
+            <h1 class="title-painel">Informe o CPF do futuro cooperado (a)</h1>
+            <p>Se necessário, você poderá duplicar uma conta existente ou pausar e retornar este cadastro futuramente.</p>
+            <p>Digite apenas os números (sem pontos ou traços).</p>
+            <div class="form">
+                <al-input ngDefaultControl [(ngModel)]="cpf" [error]="messageError" label="CPF"></al-input>
+                <al-button [disabled]="disabled" (click)="consultCPF()">Consultar por CPF</al-button>
+            </div>
+        </div>
+        <div *ngIf="user.name" class="cards">
+            <al-card>
+                <h2>Situação cadastral do CPF</h2>
+                <div class="secundary-text">
+                    Consulta na Receita Federal
+                </div>
+                <div class="infos">
+                    <img src="../../assets/icons/person.svg" alt="">
+                    <div>
+                        <div class="secundary-text">
+                            Nome
+                        </div>
+                        <div class="text">
+                            {{user.name}}
+                        </div>
+                    </div>
+                </div>
+                <div class="infos">
+                    <img src="../../assets/icons/check_circle.svg" alt="">
+                    <div>
+                        <div class="secundary-text">
+                            Situação do CPF
+                        </div>
+                        <div class="text">
+                            {{user.sitCpf}}
+                        </div>
+                    </div>
+                </div>
+            </al-card>
+            <al-card>
+                <h2>Conta aplicação</h2>
+                <div class="secundary-text">
+                    Cooperativa Viacredi
+                </div>
+                <div class="infos">
+                    <img src="../../assets/icons/credit_card.svg" alt="">
+                    <div>
+                        <div class="secundary-text">
+                            Número da conta 
+                        </div>
+                        <div class="text">
+                            {{user.numCa}}
+                        </div>
+                    </div>
+                </div>
+            </al-card>
+            <al-card>
+                <h2>Conta corrente</h2>
+                <div class="secundary-text">
+                    Cooperativa Viacredi
+                </div>
+                <div class="infos">
+                    <img src="../../assets/icons/credit_card.svg" alt="">
+                    <div>
+                        <div class="secundary-text">
+                            Número da conta
+                        </div>
+                        <div class="text">
+                            {{user.numCc}}
+                        </div>
+                    </div>
+                </div>
+            </al-card>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 85px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 85px);
+    height: 90px;
+    padding: 15px;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    font-weight: 400;
+    color: #889499;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #040F14;
+    padding-bottom: 5px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notification {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 32px;
+    width: 32px;
+    border: 1px solid #125D79;
+    border-radius: 50%;
+    color: #125D79;
+    .icon {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+    }
+
+    .notifications {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        font-weight: 600;
+        top: -5px;
+        right: -5px;
+        background-color: #FF0000;
+        border-radius: 50%;
+        color: white;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+
+.button-coop {
+    cursor: pointer;
+    border: 1px solid #125D79;
+    border-radius: 15px;
+    height: 32px;
+    font-size: 14px;
+    font-style: bold;
+    font-weight: 700;
+    color: #125D79;
+    padding: 8px 15px;
+    margin: 0 15px;
+}
+
+.user {
+    cursor: pointer;
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #023D55;
+        border-radius: 50%;
+    }
+
+    .icon {
+        top: 22px;
+        right: 0px;
+        position: absolute;
+        font-size: 15px;
+        width: 15px;
+        height: 15px;
+    }
+}

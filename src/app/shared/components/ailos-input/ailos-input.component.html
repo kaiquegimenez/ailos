@@ -1,0 +1,6 @@
+<div class="container">
+    <span class="label">{{label}}</span>
+    <input [(ngModel)]="value" (ngModelChange)="anotaModelChange.emit(value)" (keyup)="setValue($event)" maxlength="14" (keyup)="maskCpf()" [class.input--error]="error" class="input" [disabled]="disabled" [placeholder]="placeholder" type="text">
+    <span class="textAux" *ngIf="!error">{{auxText}}</span>
+    <div class="textAux textAux--error">{{error}}</div>
+</div>

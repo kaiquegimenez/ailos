@@ -1,0 +1,86 @@
+.toast-container {
+    animation: .6s showToast;
+    z-index: 1000;
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    background-color: #F15C3B;
+    width: max-content;
+    max-width: 40vw;
+    font-size: 13px;
+    color: white;
+    border-radius: 5px;
+
+    img {
+        height: 15px;
+        width: 15px;
+    }
+    
+    > .divider {
+        height: 30px;
+        width: 1px;
+        background-color: white;
+        opacity: 30%;
+    }
+    
+    > .close {
+        cursor: pointer;
+        
+        &:hover {
+            opacity: 70%;
+        }
+    }
+    
+    > .loader {
+        position: absolute;
+        animation: 7s loader ease-in-out;
+        bottom: 0;
+        left: 0;
+        height: 5px;
+        background-color: white;
+        opacity: 50%;
+    }
+    
+    &.hidden {
+        animation: .3s hiddenToast;
+        opacity: 0;
+    }
+}
+
+anota-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes showToast {
+    from {
+      opacity: 0;   
+    } 
+    to {
+        opacity: 1;    
+    }
+}
+
+@keyframes hiddenToast {
+    from {
+      opacity: 1;   
+    } 
+    to {
+        opacity: 0;    
+    }
+}
+
+@keyframes loader {
+    from {
+        width: 100%;  
+    } 
+    to {
+        width: 0;   
+    }
+}

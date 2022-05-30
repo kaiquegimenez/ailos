@@ -1,0 +1,10 @@
+<div #container class="container">
+    <div *ngFor="let step of steps; let i = index" class="stepper-container">
+        <div [class.circle--disabled]="i !== 0" class="circle">
+            <span [class.circle__step-name--disabled]="i !== 0" class="circle__step-name">
+                {{step}}
+            </span>
+        </div>
+        <div class="line"></div>
+    </div>
+</div>
