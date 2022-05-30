@@ -13,6 +13,12 @@
     flex-direction: column;
     width: calc(100% - 85px);
     height: calc(100% - 160px);
+    transition: .3s;
+
+    &--open {
+        left: 300px;
+        width: calc(100% - 300px);
+    }
 }
 
 .stepper {

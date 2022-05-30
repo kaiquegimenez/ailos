@@ -6,7 +6,7 @@
         <al-button *ngIf="user.name">Iniciar nova admissão</al-button>
         <al-button type="secundario">Dicas para admissão</al-button>
     </al-footer>
-    <div class="content">
+    <div [class.content--open]="open" class="content">
         <div class="stepper">
             <al-stepper [steps]="steps"></al-stepper>
         </div>

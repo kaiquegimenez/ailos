@@ -2,15 +2,17 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AilosMenuComponent } from './ailos-menu.component';
+import { AilosInputModule } from '../ailos-input/ailos-input.moule';
 @NgModule({
   declarations: [
-    AilosMenuComponent
+    AilosMenuComponent,
   ],
   exports: [
     AilosMenuComponent
   ],
   imports: [
     BrowserModule,
+    AilosInputModule
   ],
   providers: [],
 })

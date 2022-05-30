@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { User } from '../shared/interfaces/user.interface';
+import { MenuService } from '../shared/services/menu.service';
 import { UserService } from '../shared/services/user.service';
 
 @Component({
@@ -17,11 +19,21 @@ export class CpfQueryComponent implements OnInit{
   users: User[] = [];
   index: number = 0;
   disabled: boolean = false;
+
+  open: boolean = false;
+  open$: Observable<boolean>;
+  openSubscription: Subscription;
+  
   constructor(
-    private userService: UserService
+    private userService: UserService,
+    private menuService: MenuService
   ){}
 
   ngOnInit(): void {
+    this.open$ = this.menuService.getOpen();
+    this.openSubscription = this.open$.subscribe((value: any) => {
+      this.open = value
+    })
     this.users = this.userService.getUsers()
   }
 
