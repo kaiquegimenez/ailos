@@ -54,7 +54,8 @@ export class CpfQueryComponent implements OnInit{
         this.messageError = ''
         break
       } else if(this.users.length === this.index){
-        this.user = {}
+        this.user = {};
+        this.index = 0;
         this.messageError = ''
         this.showToast = true;
         window.clearTimeout(this.timeout);
