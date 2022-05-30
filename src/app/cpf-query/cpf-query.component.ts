@@ -15,6 +15,7 @@ export class CpfQueryComponent implements OnInit{
   showToast: boolean = false;
   timeout: number
   users: User[] = [];
+  index: number = 0;
   disabled: boolean = false;
   constructor(
     private userService: UserService
@@ -33,12 +34,14 @@ export class CpfQueryComponent implements OnInit{
       this.messageError = 'Cpf inválido'
       return
     }
-    this.users.forEach((user, index) => {
+    for(let user of this.users) {
+      this.index++
       if(user.cpf === this.cpf) {
         this.user = user
         this.disabled = true
         this.messageError = ''
-      } else if(this.users.length - 1 === index){
+        break
+      } else if(this.users.length === this.index){
         this.user = {}
         this.messageError = ''
         this.showToast = true;
@@ -47,6 +50,7 @@ export class CpfQueryComponent implements OnInit{
           this.showToast = false
         }, 7000)
       }
-    })
+
+    }
   }
 }
